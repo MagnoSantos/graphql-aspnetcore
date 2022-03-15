@@ -1,4 +1,5 @@
-﻿using GraphQL.Sample.Data.DataContext;
+﻿using GraphQL.Sample.Api.Configurations;
+using GraphQL.Sample.Data.DataContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQL.Sample.Api
@@ -23,6 +24,8 @@ namespace GraphQL.Sample.Api
         {
             services.AddControllers();
             services.AddHealthChecks();
+            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase(_configuration.GetConnectionString("InMemory")));
+            services.ConfigureGraphQL();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -33,8 +36,12 @@ namespace GraphQL.Sample.Api
             }
 
             app.UseRouting();
-            app.UseEndpoints(endpoints => endpoints.MapControllers())
-               .UseHealthChecks("/healthcheck");
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapGraphQL();
+            })
+                .UseHealthChecks("/healthcheck");
         }
     }
 }
