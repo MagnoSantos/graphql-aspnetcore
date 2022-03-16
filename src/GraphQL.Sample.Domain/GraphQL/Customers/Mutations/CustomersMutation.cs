@@ -1,11 +1,13 @@
 ﻿using GraphQL.Sample.Data.DataContext;
 using GraphQL.Sample.Data.Entities;
+using GraphQL.Sample.Domain.GraphQL.Extensions;
 
 namespace GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
 
 public class CustomersMutation
 {
-    public async Task<AddCustomersPayload> AddCustomersAsync(AddCustomersInput input, [Service] ApplicationDbContext context)
+    [UseApplicationDbContext]
+    public async Task<AddCustomersPayload> AddCustomersAsync(AddCustomersInput input, [ScopedService] ApplicationDbContext context)
     {
         var customer = new Customer
         {

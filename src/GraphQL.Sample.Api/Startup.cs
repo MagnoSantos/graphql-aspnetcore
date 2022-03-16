@@ -24,7 +24,7 @@ namespace GraphQL.Sample.Api
         {
             services.AddControllers();
             services.AddHealthChecks();
-            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase(_configuration.GetConnectionString("InMemory")));
+            services.ConfigureDataBase();
             services.ConfigureGraphQL();
         }
 
