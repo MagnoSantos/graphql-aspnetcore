@@ -1,8 +1,9 @@
 ﻿using GraphQL.Sample.Data.DataContext;
+using GraphQL.Sample.Domain.GraphQL.Extensions;
 using HotChocolate.Types.Descriptors;
 using System.Reflection;
 
-namespace GraphQL.Sample.Domain.GraphQL.Extensions;
+namespace GraphQL.Sample.Domain.GraphQL.Attributes;
 
 public class UseApplicationDbContextAttribute : ObjectFieldDescriptorAttribute
 {

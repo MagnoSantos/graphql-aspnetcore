@@ -9,4 +9,17 @@ public static class ObjectFieldDescriptorExtensions
         where TDbContext : DbContext
         => descriptor.UseScopedService(create: service => service.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext(),
                                        disposeAsync: (service, collection) => collection.DisposeAsync());
+
+    public static IObjectFieldDescriptor UseUpperCase(this IObjectFieldDescriptor descriptor)
+    {
+        return descriptor.Use(next => async context =>
+        {
+            await next(context);
+
+            if (context.Result is string s)
+            {
+                context.Result = s.ToUpperInvariant();
+            }
+        });
+    }
 }

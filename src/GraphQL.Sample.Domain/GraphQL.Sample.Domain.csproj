@@ -15,4 +15,8 @@
     <ProjectReference Include="..\GraphQL.Sample.Data\GraphQL.Sample.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\Types\" />
+  </ItemGroup>
+
 </Project>

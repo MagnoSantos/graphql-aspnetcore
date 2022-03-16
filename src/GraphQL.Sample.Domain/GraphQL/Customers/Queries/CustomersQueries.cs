@@ -1,6 +1,6 @@
 ﻿using GraphQL.Sample.Data.DataContext;
 using GraphQL.Sample.Data.Entities;
-using GraphQL.Sample.Domain.GraphQL.Extensions;
+using GraphQL.Sample.Domain.GraphQL.Attributes;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQL.Sample.Domain.GraphQL.Customers.Queries;
@@ -8,6 +8,7 @@ namespace GraphQL.Sample.Domain.GraphQL.Customers.Queries;
 public class CustomersQueries
 {
     [UseApplicationDbContext]
-    public Task<List<Customer>> GetCustomers([ScopedService] ApplicationDbContext context) => 
+    [UseUpperCase]
+    public Task<List<Customer>> GetCustomers([ScopedService] ApplicationDbContext context) =>
         context.Customers.ToListAsync();
 }
