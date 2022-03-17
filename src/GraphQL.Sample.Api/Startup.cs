@@ -1,10 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
 using GraphQL.Sample.Api.Configurations;
-using GraphQL.Sample.Data.DataContext;
 using GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
-using GraphQL.Sample.Domain.GraphQL.Customers.Mutations.Validators;
-using Microsoft.EntityFrameworkCore;
 
 namespace GraphQL.Sample.Api
 {
@@ -27,7 +24,6 @@ namespace GraphQL.Sample.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().AddFluentValidation();
-            services.AddTransient<IValidator<CustomersInput>, CustomersInputValidator>();
 
             services.AddControllers();
             services.AddHealthChecks();

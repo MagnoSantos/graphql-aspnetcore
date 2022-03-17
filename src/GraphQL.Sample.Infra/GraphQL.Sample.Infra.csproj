@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="GraphQL\Filters\" />
+    <Folder Include="GraphQL\Loaders\" />
+    <Folder Include="GraphQL\Types\" />
+  </ItemGroup>
+
 </Project>

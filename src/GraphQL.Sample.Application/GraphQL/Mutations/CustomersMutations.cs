@@ -1,12 +1,11 @@
 ﻿using GraphQL.Sample.Data.DataContext;
 using GraphQL.Sample.Data.Entities;
-using GraphQL.Sample.Domain.GraphQL.Attributes;
+using HotChocolate;
 
 namespace GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
 
 public class CustomersMutations
 {
-    [UseApplicationDbContext]
     public async Task<CustomersPayload> AddCustomersAsync(
         CustomersInput input,
         [ScopedService] ApplicationDbContext context

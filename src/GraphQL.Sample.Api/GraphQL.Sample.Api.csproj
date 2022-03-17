@@ -12,8 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GraphQL.Sample.Data\GraphQL.Sample.Data.csproj" />
+    <ProjectReference Include="..\GraphQL.Sample.Application\GraphQL.Sample.Application.csproj" />
     <ProjectReference Include="..\GraphQL.Sample.Domain\GraphQL.Sample.Domain.csproj" />
+    <ProjectReference Include="..\GraphQL.Sample.Infra.Data\GraphQL.Sample.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

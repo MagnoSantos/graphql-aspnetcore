@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Data", "GraphQL.Sample.Data\GraphQL.Sample.Data.csproj", "{A323E55B-40C8-474C-87F2-181296E52AC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Api", "GraphQL.Sample.Api\GraphQL.Sample.Api.csproj", "{BAD4D4F3-E071-466A-BA58-0DD9DF4B1B40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Sample.Api", "GraphQL.Sample.Api\GraphQL.Sample.Api.csproj", "{BAD4D4F3-E071-466A-BA58-0DD9DF4B1B40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Domain", "GraphQL.Sample.Domain\GraphQL.Sample.Domain.csproj", "{2F838151-3EAC-47B3-A0E0-B28A13D72CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Sample.Domain", "GraphQL.Sample.Domain\GraphQL.Sample.Domain.csproj", "{2F838151-3EAC-47B3-A0E0-B28A13D72CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Application", "GraphQL.Sample.Application\GraphQL.Sample.Application.csproj", "{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Sample.Application", "GraphQL.Sample.Application\GraphQL.Sample.Application.csproj", "{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Infra.IoC", "GraphQL.Sample.Infra.CrossCutting.IoC\GraphQL.Sample.Infra.IoC.csproj", "{4A1702BA-2028-405E-84AB-AD1B9F232D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Sample.Data", "GraphQL.Sample.Infra.Data\GraphQL.Sample.Data.csproj", "{52AA3BF6-E0C2-4A02-ABD5-F02C7801C7FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Infra.Data", "GraphQL.Sample.Infra.Data\GraphQL.Sample.Infra.Data.csproj", "{A07F70AD-BE11-4524-92FD-345155A7F69C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Sample.Infra.CrossCutting.IoC", "GraphQL.Sample.Infra.CrossCutting.IoC\GraphQL.Sample.Infra.CrossCutting.IoC.csproj", "{4A1702BA-2028-405E-84AB-AD1B9F232D51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Infra", "GraphQL.Sample.Infra\GraphQL.Sample.Infra.csproj", "{6BB414C4-684C-4535-8434-E21B97994A83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A323E55B-40C8-474C-87F2-181296E52AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A323E55B-40C8-474C-87F2-181296E52AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A323E55B-40C8-474C-87F2-181296E52AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A323E55B-40C8-474C-87F2-181296E52AC0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BAD4D4F3-E071-466A-BA58-0DD9DF4B1B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAD4D4F3-E071-466A-BA58-0DD9DF4B1B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAD4D4F3-E071-466A-BA58-0DD9DF4B1B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,14 +33,18 @@ Global
 		{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52AA3BF6-E0C2-4A02-ABD5-F02C7801C7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52AA3BF6-E0C2-4A02-ABD5-F02C7801C7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52AA3BF6-E0C2-4A02-ABD5-F02C7801C7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52AA3BF6-E0C2-4A02-ABD5-F02C7801C7FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07F70AD-BE11-4524-92FD-345155A7F69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07F70AD-BE11-4524-92FD-345155A7F69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07F70AD-BE11-4524-92FD-345155A7F69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07F70AD-BE11-4524-92FD-345155A7F69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB414C4-684C-4535-8434-E21B97994A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB414C4-684C-4535-8434-E21B97994A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB414C4-684C-4535-8434-E21B97994A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB414C4-684C-4535-8434-E21B97994A83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

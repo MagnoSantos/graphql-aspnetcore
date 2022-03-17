@@ -13,11 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GraphQL.Sample.Data\GraphQL.Sample.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Abstractions\Types\" />
+    <ProjectReference Include="..\GraphQL.Sample.Infra.Data\GraphQL.Sample.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
