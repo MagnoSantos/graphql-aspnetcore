@@ -1,7 +1,4 @@
-﻿using FluentValidation;
-using FluentValidation.AspNetCore;
-using GraphQL.Sample.Api.Configurations;
-using GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
+﻿using GraphQL.Sample.Infra.CrossCutting.IoC;
 
 namespace GraphQL.Sample.Api
 {
@@ -23,12 +20,9 @@ namespace GraphQL.Sample.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddFluentValidation();
-
             services.AddControllers();
             services.AddHealthChecks();
-            services.ConfigureDataBase();
-            services.ConfigureGraphQL();
+            services.ConfigureContainer(_configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

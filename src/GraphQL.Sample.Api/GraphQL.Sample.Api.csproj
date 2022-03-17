@@ -7,14 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GraphQL.Sample.Application\GraphQL.Sample.Application.csproj" />
     <ProjectReference Include="..\GraphQL.Sample.Domain\GraphQL.Sample.Domain.csproj" />
     <ProjectReference Include="..\GraphQL.Sample.Infra.Data\GraphQL.Sample.Infra.Data.csproj" />
+    <ProjectReference Include="..\GraphQL.Sample.Infra.IoC\GraphQL.Sample.Infra.IoC.csproj" />
   </ItemGroup>
 
 </Project>

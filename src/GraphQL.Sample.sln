@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Domain", "Gr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Application", "GraphQL.Sample.Application\GraphQL.Sample.Application.csproj", "{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Infra.IoC", "GraphQL.Sample.Infra.CrossCutting.IoC\GraphQL.Sample.Infra.IoC.csproj", "{4A1702BA-2028-405E-84AB-AD1B9F232D51}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Infra.Data", "GraphQL.Sample.Infra.Data\GraphQL.Sample.Infra.Data.csproj", "{A07F70AD-BE11-4524-92FD-345155A7F69C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Infra", "GraphQL.Sample.Infra\GraphQL.Sample.Infra.csproj", "{6BB414C4-684C-4535-8434-E21B97994A83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Sample.Infra.IoC", "GraphQL.Sample.Infra.IoC\GraphQL.Sample.Infra.IoC.csproj", "{732187DB-CFDF-4C00-961E-E9387AE8457B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08CAE76B-96AC-4C25-8017-A24D8A5ECFD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A1702BA-2028-405E-84AB-AD1B9F232D51}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A07F70AD-BE11-4524-92FD-345155A7F69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A07F70AD-BE11-4524-92FD-345155A7F69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A07F70AD-BE11-4524-92FD-345155A7F69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{6BB414C4-684C-4535-8434-E21B97994A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BB414C4-684C-4535-8434-E21B97994A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BB414C4-684C-4535-8434-E21B97994A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{732187DB-CFDF-4C00-961E-E9387AE8457B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{732187DB-CFDF-4C00-961E-E9387AE8457B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{732187DB-CFDF-4C00-961E-E9387AE8457B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{732187DB-CFDF-4C00-961E-E9387AE8457B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

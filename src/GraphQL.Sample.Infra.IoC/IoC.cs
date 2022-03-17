@@ -7,9 +7,9 @@ public static class IoC
 {
     public static IServiceCollection ConfigureContainer(this IServiceCollection services, IConfiguration configuration)
     {
-        ApplicationModule.Register(services, configuration);
-        DomainModule.Register(services, configuration);
-        InfrastructureModule.Register(services, configuration);
+        ApplicationModule.Register(services);
+        DomainModule.Register(services);
+        InfrastructureModule.Register(services);
 
         return services;
     }

@@ -12,4 +12,13 @@
     <Folder Include="GraphQL\Types\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HotChocolate" Version="12.7.0" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="12.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQL.Sample.Application\GraphQL.Sample.Application.csproj" />
+  </ItemGroup>
+
 </Project>
