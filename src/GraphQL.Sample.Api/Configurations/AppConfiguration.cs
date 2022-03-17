@@ -10,9 +10,11 @@ namespace GraphQL.Sample.Api.Configurations;
 public static class AppConfiguration
 {
     public static void ConfigureGraphQL(this IServiceCollection services)
-         => services.AddGraphQLServer()
+    {
+        services.AddGraphQLServer()
                 .AddQueryType<CustomersQueries>()
                 .AddMutationType<CustomersMutations>();
+    }
 
     public static void ConfigureDataBase(this IServiceCollection services)
         => services.AddPooledDbContextFactory<ApplicationDbContext>(options => options.UseInMemoryDatabase(GetConnectionString()));
