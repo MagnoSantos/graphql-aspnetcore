@@ -1,4 +1,5 @@
 ﻿using HotChocolate;
+using HotChocolate.Types.Relay;
 using System.ComponentModel.DataAnnotations;
 
 namespace GraphQL.Sample.Data.Entities;
@@ -6,6 +7,7 @@ namespace GraphQL.Sample.Data.Entities;
 [GraphQLDescription("Dados de clientes")]
 public class Customer
 {
+    [ID]
     [GraphQLDescription("Id do cliente")]
     public Guid Id { get; set; }
 

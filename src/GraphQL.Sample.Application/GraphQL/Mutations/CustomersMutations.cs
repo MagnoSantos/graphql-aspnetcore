@@ -1,7 +1,5 @@
-﻿using GraphQL.Sample.Data.DataContext;
-using GraphQL.Sample.Data.Entities;
-using GraphQL.Sample.Infra.Data.DataContext;
-using HotChocolate;
+﻿using GraphQL.Sample.Data.Entities;
+using GraphQL.Sample.Infra.Data.Repositories;
 using HotChocolate.Types;
 
 namespace GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
@@ -9,11 +7,14 @@ namespace GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
 [ExtendObjectType("Mutation")]
 public class CustomersMutations
 {
-    [UseApplicationDbContext]
-    public async Task<CustomersPayload> AddCustomersAsync(
-        CustomersInput input,
-        [ScopedService] ApplicationDbContext context
-    )
+    private readonly ICustomerRepository _customerRepository;
+
+    public CustomersMutations(ICustomerRepository customerRepository)
+    {
+        _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
+    }
+
+    public async Task<CustomersPayload> AddCustomersAsync(CustomersInput input)
     {
         var customer = new Customer
         {
@@ -23,8 +24,7 @@ public class CustomersMutations
             LastName = input.LastName
         };
 
-        context.Customers.Add(customer);
-        await context.SaveChangesAsync();
+        await _customerRepository.Add(customer);
 
         return new CustomersPayload(customer);
     }

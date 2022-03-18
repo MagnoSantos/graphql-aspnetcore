@@ -1,5 +1,7 @@
-﻿using GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
+﻿using GraphQL.Sample.Data.DataContext;
+using GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
 using GraphQL.Sample.Domain.GraphQL.Customers.Queries;
+using HotChocolate.Data;
 using HotChocolate.Execution.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +13,7 @@ public static class ApplicationModule
     {
         services.AddGraphQLServer()
                 .InitializeOnStartup()
+                .RegisterDbContext<ApplicationDbContext>(DbContextKind.Pooled)
                 .AddQueryType(q => q.Name("Query"))
                     .AddQueries()
                 .AddMutationType(m => m.Name("Mutation"))

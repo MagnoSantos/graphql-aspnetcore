@@ -1,6 +1,6 @@
 ﻿using GraphQL.Sample.Data.DataContext;
+using GraphQL.Sample.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GraphQL.Sample.Infra.CrossCutting.IoC.Modules;
@@ -11,6 +11,8 @@ public static class InfrastructureModule
 
     public static void Register(IServiceCollection services)
     {
-        services.AddPooledDbContextFactory<ApplicationDbContext>(options => options.UseInMemoryDatabase(ConnectionString));
+        services.AddScoped<ApplicationDbContext>()
+                .AddPooledDbContextFactory<ApplicationDbContext>(options => options.UseInMemoryDatabase(ConnectionString))
+                .AddScoped<ICustomerRepository, CustomerRepository>();
     }
 }
