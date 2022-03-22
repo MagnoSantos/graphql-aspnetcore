@@ -1,16 +1,12 @@
-﻿using HotChocolate;
-using HotChocolate.Types.Relay;
+﻿using GraphQL.Sample.Infra.Data.Entitites;
+using HotChocolate;
 using System.ComponentModel.DataAnnotations;
 
 namespace GraphQL.Sample.Data.Entities;
 
 [GraphQLDescription("Dados de clientes")]
-public class Customer
+public class Customer : BaseEntity
 {
-    [ID]
-    [GraphQLDescription("Id do cliente")]
-    public Guid Id { get; set; }
-
     [GraphQLDescription("Primeiro nome do cliente")]
     [StringLength(200)]
     public string? Name { get; set; }

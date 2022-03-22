@@ -1,6 +1,7 @@
-﻿namespace GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
+﻿using HotChocolate.Types.Relay;
 
-public record CustomersInput(Guid Id,
-                             string? Name,
+namespace GraphQL.Sample.Domain.GraphQL.Customers.Mutations;
+
+public record CustomersInput(string? Name,
                              string? LastName,
                              string? Cpf);

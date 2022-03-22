@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="GraphQL\Filters\" />
-    <Folder Include="GraphQL\Loaders\" />
     <Folder Include="GraphQL\Types\" />
   </ItemGroup>
 
@@ -18,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GraphQL.Sample.Application\GraphQL.Sample.Application.csproj" />
+    <ProjectReference Include="..\GraphQL.Sample.Infra.Data\GraphQL.Sample.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

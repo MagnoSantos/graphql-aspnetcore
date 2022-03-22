@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GraphQL.Sample.Domain\GraphQL.Sample.Domain.csproj" />
+    <ProjectReference Include="..\GraphQL.Sample.Infra\GraphQL.Sample.Infra.csproj" />
   </ItemGroup>
 
 </Project>
