@@ -1,5 +1,6 @@
 ﻿using GraphQL.Sample.Data.DataContext;
 using GraphQL.Sample.Infra.Data.Repositories;
+using GraphQL.Sample.Infra.Data.UoW;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +14,7 @@ public static class InfrastructureModule
     {
         services.AddScoped<ApplicationDbContext>()
                 .AddPooledDbContextFactory<ApplicationDbContext>(options => options.UseInMemoryDatabase(ConnectionString))
-                .AddScoped<ICustomerRepository, CustomerRepository>();
+                .AddTransient<ICustomerRepository, CustomerRepository>()
+                .AddTransient<IUnitOfWork, UnitOfWork>();
     }
 }
