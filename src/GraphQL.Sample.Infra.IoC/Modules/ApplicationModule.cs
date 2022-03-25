@@ -13,6 +13,7 @@ public static class ApplicationModule
     {
         services.AddGraphQLServer()
                 .InitializeOnStartup()
+                .AddFiltering()
                 .RegisterDbContext<ApplicationDbContext>(DbContextKind.Pooled)
                 .AddQueryType(q => q.Name("Query"))
                     .AddQueries()
