@@ -220,6 +220,53 @@ public Task<List<Customer>> GetCustomers([ScopedService] ApplicationDbContext co
     context.Customers.ToListAsync();
 ```
 
+## Data Loader
+
+Toda tecnologia de busca sofre problema n+1. A diferença é que o GraphQL o problema ocorre no sercidor e não no cliente. Podemos
+portanto lidar com esse problema uma vez no servidor, e não em cada cliente. 
+
+DataLoader é utilizado para agrupar as solicitações em uma chamada única ao banco de dados. 
+
+```csharp
+public class EntityByIdBatchDataLoader<TEntity> : BatchDataLoader<Guid, TEntity> where TEntity : BaseEntity
+    {
+        private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
+
+        public EntityByIdBatchDataLoader(IDbContextFactory<ApplicationDbContext> dbContextFactory,
+                                         IBatchScheduler batchSchedule)
+            : base(batchSchedule)
+        {
+            _dbContextFactory = dbContextFactory ?? throw new ArgumentNullException(nameof(dbContextFactory));
+        }
+
+        protected override async Task<IReadOnlyDictionary<Guid, TEntity>> LoadBatchAsync(IReadOnlyList<Guid> keys, CancellationToken cancellationToken)
+        {
+            using ApplicationDbContext dbContext = await _dbContextFactory.CreateDbContextAsync();
+
+            return await dbContext.Set<TEntity>()
+                                  .Where(entity => keys.Contains(entity.Id))
+                                  .ToDictionaryAsync(entity => entity.Id, cancellationToken);
+        }
+    }
+``` 
+
+Neste trecho centralizamos a busca de dados e reduzimos o número de idas e vinda para nossa base de dados. Em vez de buscar os dados de um repositório, buscamos
+os dados do carregador de dados. O carregador agrupa todas as solicitações em uma única. 
+
+## Paging
+
+Exemplo de consulta SDL com filtros: 
+
+```sdl
+type UsersConnection {
+  pageInfo: PageInfo!
+  edges: [UsersEdge!]
+  nodes: [User!]
+}
+```
+
+Para utilizá-lo basta definir o middleware ```[UsePagging]```. Este, aplicará os argumentos de paginação ao que for retornado. 
+
 <!-- LICENSE -->
 ## License
 
