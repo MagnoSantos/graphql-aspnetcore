@@ -16,7 +16,7 @@ Esse projeto visa a implementação simples do recurso de GraphQL para construç
 
 * [.NET](https://dotnet.microsoft.com/download/dotnet/6.0)
 * [Entity Framework Core](https://docs.microsoft.com/pt-br/ef/core/)
-* [HotChocolate](https://github.com/ChilliCream/hotchocolate)
+* [GraphQlPlatform](https://github.com/ChilliCream/hotchocolate)
 
 
 ## Pré-Requisitos
