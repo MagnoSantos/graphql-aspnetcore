@@ -10,7 +10,7 @@
 
 ## Sobre o projeto
 
-Esse projeto visa a implementação simples do recurso de GraphQL para construção de queries e mutations. Para isso, será implementado um repositório template considerando o workshop do ChilliCream GraphQL Plataform). 
+Esse projeto visa a implementação simples do recurso de GraphQL para construção de queries e mutations. Para isso, será implementado um repositório template considerando o workshop do ChilliCream GraphQL Plataform. 
 
 ### Criado com
 
