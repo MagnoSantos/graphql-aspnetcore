@@ -117,7 +117,7 @@ Será possível analisar os schemas e realizar operações através do: ```<addr
 
 ## Controle de anuláveis
 
-O sistema de tipos GraphQL distingue entre tipos anuláveis e não anuláveis. Isso ajuda o consumidor da API fornecendo garantias quando um valor de campo pode ser confiávl para nunca ser nulo ou quando a entreada não pode ser nula. Esse lado é interessante pois não necessita de escrever várias verificações nulas para coisas que nunca serão nulas. 
+O sistema de tipos GraphQL distingue entre tipos anuláveis e não anuláveis. Isso ajuda o consumidor da API fornecendo garantias quando um valor de campo pode ser confiávl para nunca ser nulo ou quando a entrada não pode ser nula. Este é um recurso interessante, pois não necessita de escrever várias verificações nulas para coisas que nunca serão nulas. 
 
 No projeto *GraphQL.Sample.Data* existe uma propriedade no .csproj sobre esse aspecto: 
 
