@@ -253,7 +253,7 @@ public class EntityByIdBatchDataLoader<TEntity> : BatchDataLoader<Guid, TEntity>
 Neste trecho centralizamos a busca de dados e reduzimos o número de idas e vinda para nossa base de dados. Em vez de buscar os dados de um repositório, buscamos
 os dados do carregador de dados. O carregador agrupa todas as solicitações em uma única. 
 
-## Paging
+## Pagging
 
 Exemplo de consulta SDL com filtros: 
 
